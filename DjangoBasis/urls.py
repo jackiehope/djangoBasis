@@ -1,3 +1,4 @@
+#coding:utf-8
 """DjangoBasis URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -16,9 +17,12 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 #from django.views import
+from showtime import views as cu_time
 from DjangoBasis.views import hello
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    #直接在同一个目录下编写视图函数
     url(r'^hello/$', hello, name='hello'),
+    url(r'^showtime/$', cu_time.showtime, name='showtime'),
 ]
